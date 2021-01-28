@@ -2,7 +2,7 @@ import { useForceUpdate } from "@mo36924/preact-hooks";
 import type { ComponentType } from "preact";
 import { jsx } from "preact/jsx-runtime";
 
-export const lazy = <T>(
+export default <T>(
   loader: () => Promise<{ default: ComponentType<T> }>,
 ): ComponentType<T> & { load: () => Promise<void> } => {
   let promise: Promise<any> | undefined;
